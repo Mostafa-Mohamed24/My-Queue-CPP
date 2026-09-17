@@ -1,43 +1,8 @@
-# Doubly Linked List & Queue (C++)
+# Queue (C++)
 
-A C++ project implementing a generic **Doubly Linked List** (`clsDblLinkedList<T>`) and a **Queue** (`clsMyQueue<T>`) built on top of it using composition.
+A generic **Queue** (`clsMyQueue<T>`) implementation in C++, built internally using a doubly linked list, with additional utility operations beyond the standard queue interface.
 
-## Project Structure
-
-- `clsDblLinkedList.h` — Generic doubly linked list template class
-- `clsMyQueue.h` — Queue implementation, wraps `clsDblLinkedList<T>` internally
-- `main.cpp` — Demo program showing usage of the Queue
-
-## Doubly Linked List — `clsDblLinkedList<T>`
-
-A generic (templated) implementation supporting any data type.
-
-### Methods
-
-| Method | Description |
-|---|---|
-| `InsertAtBeginning(T Value)` | Insert a new node at the beginning of the list |
-| `InsertAtEnd(T Value)` | Insert a new node at the end of the list |
-| `InsertAfter(Node* Current, T Value)` | Insert a new node after a given node |
-| `InsertAfter(int Index, T Value)` | Insert a new node after a given index |
-| `Find(T Value)` | Search for a node by value |
-| `DeleteNode(Node*& NodeToDelete)` | Delete a specific node |
-| `DeleteFirstNode()` | Delete the first node |
-| `DeleteLastNode()` | Delete the last node |
-| `GetNode(int Index)` | Get a node by its index |
-| `GetItem(int Index)` | Get the value stored at a given index |
-| `UpdateItem(int Index, T NewValue)` | Update the value at a given index |
-| `Reverse()` | Reverse the list in place |
-| `PrintList()` | Print all elements in the list |
-| `Size()` | Return the number of elements |
-| `IsEmpty()` | Check whether the list is empty |
-| `Clear()` | Remove all nodes from the list |
-
-## Queue — `clsMyQueue<T>`
-
-A Queue (FIFO) implementation built internally using `clsDblLinkedList<T>`, with additional utility operations beyond the standard queue interface.
-
-### Standard Queue Operations
+## Standard Queue Operations
 
 | Method | Description |
 |---|---|
@@ -49,7 +14,7 @@ A Queue (FIFO) implementation built internally using `clsDblLinkedList<T>`, with
 | `IsEmpty()` | Check whether the queue is empty |
 | `Print()` | Print all items in the queue |
 
-### Extended Operations
+## Extended Operations
 
 | Method | Description |
 |---|---|
@@ -66,12 +31,13 @@ A Queue (FIFO) implementation built internally using `clsDblLinkedList<T>`, with
 ## Example Usage
 
 \`\`\`cpp
+
 #include "clsMyQueue.h"
 
 int main()
 {
-    clsMyQueue<int> MyQueue;
 
+    clsMyQueue<int> MyQueue;
     MyQueue.Push(10);
     MyQueue.Push(20);
     MyQueue.Push(30);
@@ -95,6 +61,6 @@ int main()
     MyQueue.InsertAtBack(600);
     MyQueue.Clear();
 
-    return 0;
+    return 0;  
+    
 }
-\`\`\`
